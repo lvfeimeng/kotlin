@@ -357,7 +357,6 @@ internal class KotlinCommonSourceSetProcessor(
             // can be missing (e.g. in case of tests)
             project.tasks.findByName(sourceSet.jarTaskName)?.dependsOn(kotlinTask)
             val javaTask = project.tasks.findByName(sourceSet.compileJavaTaskName)
-            project.tasks.remove(javaTask)
 
             appliedPlugins
                     .flatMap { it.getSubpluginKotlinTasks(project, kotlinTask) }
